@@ -1,6 +1,21 @@
-import { Link, NavLink } from "react-router-dom";
+import { useContext } from "react";
+import { Link, NavLink, useNavigate } from "react-router-dom";
+import { AuthContext } from "../../Provider/AutProvider";
+import { toast } from "react-toastify";
 
 const Navbar = () => {
+  const { user, logOut } = useContext(AuthContext);
+  const navigate = useNavigate();
+
+  const handleLogOut = () => {
+    logOut();
+    console.log("log out succed");
+    toast.success("Successfully loged out!", {
+      position: "top-center",
+    });
+    navigate(location?.state ? location.state : "/");
+  };
+
   const links = (
     <>
       <li>
@@ -54,11 +69,15 @@ const Navbar = () => {
     </>
   );
   return (
-    <div>
-      <div className="navbar bg-base-100">
-        <div className="navbar-start">
-          <div className="dropdown">
-            <div tabIndex={0} role="button" className="btn btn-ghost lg:hidden">
+    <div className="my-6">
+      <div className="  flex lg:justify-around  justify-evenly md:justify-evenly items-center  bg-base-100 ">
+        <div className=" flex items-center">
+          <div className="dropdown z-100 relative">
+            <div
+              tabIndex={0}
+              role="button"
+              className="btn btn-ghost lg:hidden "
+            >
               <svg
                 xmlns="http://www.w3.org/2000/svg"
                 className="h-5 w-5"
@@ -81,17 +100,61 @@ const Navbar = () => {
               {links}
             </ul>
           </div>
-          <a className="btn btn-ghost text-xl space-">
-            Discover<span>Haven</span>
+          <a className="font-bold text-xl">
+            Discover<span className="text-[#ff5a5f]">Haven</span>
           </a>
         </div>
-        <div className="navbar-center hidden lg:flex">
+        <div className=" hidden lg:flex ">
           <ul className="menu menu-horizontal px-1">{links}</ul>
         </div>
-        <div className="navbar-end">
-          <Link to="/login">
-            <a className="btn">Login</a>
-          </Link>
+
+        <div className="flex">
+          <div className="">
+            {/* user profile */}
+            {user && (
+              <div
+                tabIndex={0}
+                role="button"
+                className="btn btn-ghost btn-circle avatar dropdown dropdown-hover mr-2"
+              >
+                {/* dropdown user */}
+                <div className=" rounded-full">
+                  <Link to="/update">
+                    <div className=" rounded-full ">
+                      <img
+                        alt="Tailwind CSS Navbar component "
+                        src={user.photoURL}
+                      />
+                    </div>
+                  </Link>
+                  <ul
+                    tabIndex={0}
+                    className="dropdown-content z-[1] menu p-2 shadow bg-base-100 rounded-box w-52 "
+                  >
+                    <li>
+                      <a>{user.displayName}</a>
+                    </li>
+                  </ul>
+                </div>
+              </div>
+            )}
+          </div>
+          <div>
+            {user ? (
+              <button onClick={handleLogOut} className="btn">
+                Sign Out
+              </button>
+            ) : (
+              <Link
+                to="/login"
+                state={{ from: location?.state?.from }}
+                replace
+                className="btn"
+              >
+                Login
+              </Link>
+            )}
+          </div>
         </div>
       </div>
     </div>

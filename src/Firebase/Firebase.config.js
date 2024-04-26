@@ -4,6 +4,16 @@ import { initializeApp } from "firebase/app";
 // https://firebase.google.com/docs/web/setup#available-libraries
 
 // Your web app's Firebase configuration
+
+// const firebaseConfig = {
+//   apiKey: "AIzaSyCKCJRDdsEBkw3q0GvZN9aYc3cVU7iZkUk",
+//   authDomain: "discover-haven.firebaseapp.com",
+//   projectId: "discover-haven",
+//   storageBucket: "discover-haven.appspot.com",
+//   messagingSenderId: "398224921103",
+//   appId: "1:398224921103:web:eb5d8b58260664064b097a",
+// };
+
 const firebaseConfig = {
   apiKey: import.meta.env.VITE_APIKEY,
   authDomain: import.meta.env.VITE_AUTHDOMAIN,

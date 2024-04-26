@@ -1,19 +1,91 @@
-import { useState } from "react";
-import { FaRegEye, FaRegEyeSlash } from "react-icons/fa";
-import { Link } from "react-router-dom";
+import { useContext, useState } from "react";
+import { FaGoogle, FaRegEye, FaRegEyeSlash, FaTwitter } from "react-icons/fa";
+import { Link, useLocation, useNavigate } from "react-router-dom";
+
+import { toast } from "react-toastify";
+import { AuthContext } from "../../Provider/AutProvider";
+import { Helmet } from "react-helmet";
 
 const Login = () => {
+  const { signInUser, googleLogin, twitterLogin, setLoad } =
+    useContext(AuthContext);
   const [showPassword, setShowPassword] = useState(false);
   const [error, setError] = useState("");
+
+  const location = useLocation();
+  const navigate = useNavigate();
+  console.log("location from login page", location);
+
   const handleLogin = (e) => {
     e.preventDefault();
+    // reset error message
+    setError("");
+
+    const form = new FormData(e.currentTarget);
+    const email = form.get("email");
+    const password = form.get("password");
+    console.log(email, password);
+
+    // sign in email and password
+    signInUser(email, password)
+      .then((result) => {
+        console.log(result.user);
+        navigate(location?.state ? location.state : "/");
+        setLoad(true);
+        toast.success("Successfully signed in", {
+          position: "top-center",
+        });
+        e.target.reset();
+      })
+      .catch((error) => {
+        console.log(error);
+        setError(error.message.split(":")[1]);
+        toast.error(`Email or password is not valid`, {
+          position: "top-center",
+        });
+      });
   };
+
+  // handle google log in
+  const handleGoogleLogin = () => {
+    googleLogin().then(() => {
+      navigate(location?.state ? location.state : "/");
+      toast.success("successfully google signed in", {
+        position: "top-center",
+      });
+    });
+  };
+
+  // handle twitter log in
+  const handleTwitterLogin = () => {
+    twitterLogin().then(() => {
+      navigate(location?.state ? location.state : "/");
+      toast.success("successfully twitter signed in", {
+        position: "top-center",
+      });
+    });
+  };
+
   return (
-    <div>
-      <div className="text-center">
-        <h2>log in</h2>
-      </div>
-      <div className="text-center">
+    <div className="flex flex-col-reverse lg:flex-row w-3/4 mx-auto my-8">
+      <Helmet>
+        <title>Login-Discover Haven</title>
+      </Helmet>
+      
+
+      <div className="card-body">
+        <div>
+          <h3 className="text-[#006c70] text-lg font-semibold">Login</h3>
+          <button onClick={handleGoogleLogin} className="btn w-full mt-4">
+            <FaGoogle></FaGoogle>
+            Login With Google
+          </button>
+          <button onClick={handleTwitterLogin} className="btn w-full my-4">
+            <FaTwitter></FaTwitter>
+            Login With Twitter
+          </button>
+          <div className="border-b my-4"></div>
+        </div>
         <form onSubmit={handleLogin} className="">
           <div className="form-control">
             <label className="label">
