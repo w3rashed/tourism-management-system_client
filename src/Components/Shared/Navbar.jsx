@@ -45,7 +45,7 @@ const Navbar = () => {
               viewTransitionName: isTransitioning ? "slide" : "",
             };
           }}
-          to="/tourists-spot"
+          to="/all_tourists_spot"
         >
           All Tourists Spot
         </NavLink>
@@ -61,7 +61,7 @@ const Navbar = () => {
               viewTransitionName: isTransitioning ? "slide" : "",
             };
           }}
-          to="/add-tourists-spot"
+          to="/add_tourists_spot"
         >
           Add Tourists Spot
         </NavLink>
@@ -100,9 +100,11 @@ const Navbar = () => {
               {links}
             </ul>
           </div>
-          <a className="font-bold text-xl">
-            Discover<span className="text-[#ff5a5f]">Haven</span>
-          </a>
+          <Link to="/">
+            <button className="font-bold text-xl">
+              Discover<span className="text-[#ff5a5f]">Haven</span>
+            </button>
+          </Link>
         </div>
         <div className=" hidden lg:flex ">
           <ul className="menu menu-horizontal px-1">{links}</ul>
