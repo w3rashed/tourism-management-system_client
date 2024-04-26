@@ -6,6 +6,7 @@ import Login from "../Components/User/Login";
 import Register from "../Components/User/Register";
 import AllTouristsSpot from "../Components/AllTouristsSpot/AllTouristsSpot";
 import ErrorPage from "../Components/ErrorPage/ErrorPage";
+import DestinationsLists from "../Components/Home/DestinationsLists/DestinationsLists";
 
 const Routes = createBrowserRouter([
   {
@@ -33,6 +34,7 @@ const Routes = createBrowserRouter([
         path: "/all_tourists_spot",
         element: <AllTouristsSpot></AllTouristsSpot>,
       },
+      
     ],
   },
 ]);

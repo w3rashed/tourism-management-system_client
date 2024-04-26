@@ -17,6 +17,7 @@ const AddTouristsSpot = () => {
     const seasonality = form.seasonality.value;
     const travel_time = form.travel_time.value;
     const visitors_per_year = form.visitors_per_year.value;
+    const photo_url = form.photo_url.value;
 
     const spots = {
       user_name,
@@ -29,6 +30,7 @@ const AddTouristsSpot = () => {
       seasonality,
       travel_time,
       visitors_per_year,
+      photo_url
     };
     console.log(spots);
 

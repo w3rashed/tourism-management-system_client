@@ -1,6 +1,7 @@
 import { Helmet } from "react-helmet";
 import Slider from "./Slider/Slider";
 import Category from "./Category/Category";
+import DestinationsLists from "./DestinationsLists/DestinationsLists";
 
 const Home = () => {
   return (
@@ -10,7 +11,7 @@ const Home = () => {
       </Helmet>
       <Slider></Slider>
       <div className="my-5">
-        <Category></Category>
+        <DestinationsLists></DestinationsLists>
       </div>
     </div>
   );

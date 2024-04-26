@@ -15,7 +15,7 @@ const Slider = () => {
   const [slides, setSlides] = useState();
   useEffect(() => {
     fetch(
-      "https://w3rashed.github.io/HavenHues-slider-data/HavenHues-slider-data.json"
+      "http://localhost:5000/destinations"
     )
       .then((res) => res.json())
       .then((data) => {
