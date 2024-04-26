@@ -8,14 +8,17 @@ const DestinationsLists = () => {
     fetch("http://localhost:5000/destinations")
       .then((res) => res.json())
       .then((data) => {
-        setDestinations(data);
+        setDestinations(data.slice(0, 6));
       });
   }, []);
   console.log(destinations);
   return (
     <div>
-      <h1 className="my-6">DestinationsLists:{destinations.length} </h1>
-      <div className="">
+      <div>
+        <h3>Destination lists</h3>
+        <h2>Go Exotic Places</h2>
+      </div>
+      <div className=" grid gap-6 grid-cols-3">
         {destinations.map((destination) => (
           <DestinationCard
             key={destination._id}
