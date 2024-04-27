@@ -1,7 +1,8 @@
 import { Helmet } from "react-helmet";
-import Slider from "./Slider/Slider";
-import Category from "./Category/Category";
-import DestinationsLists from "./DestinationsLists/DestinationsLists";
+import Slider from "../Slider/Slider";
+import DestinationsLists from "./DestinationsLists";
+import Discount from "../Discount/Discount";
+import Category from "../Category/Category";
 
 const Home = () => {
   return (
@@ -13,6 +14,8 @@ const Home = () => {
       <div className="my-5">
         <DestinationsLists></DestinationsLists>
       </div>
+      {/* <Discount></Discount> */}
+      <Category></Category>
     </div>
   );
 };

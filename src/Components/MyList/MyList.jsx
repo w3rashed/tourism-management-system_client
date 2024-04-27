@@ -5,6 +5,7 @@ import { FaEdit } from "react-icons/fa";
 import { MdOutlineDelete } from "react-icons/md";
 import { Link } from "react-router-dom";
 import Swal from "sweetalert2";
+import { Helmet } from "react-helmet";
 
 const MyList = () => {
   const { user } = useContext(AuthContext) || {};
@@ -55,6 +56,9 @@ const MyList = () => {
 
   return (
     <div>
+      <Helmet>
+        <title>My_list-Discover Haven</title>
+      </Helmet>
       <div className="overflow-x-auto">
         <table className="table">
           {/* head */}

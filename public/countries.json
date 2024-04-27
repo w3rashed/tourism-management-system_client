@@ -1,0 +1,41 @@
+{
+    "data": [
+      {
+        "id": 1,
+        "img": "https://example.com/sundarban.jpg",
+        "category": "Bangladesh",
+        "subcategory": "Sundarban"
+      },
+      {
+        "id": 2,
+        "img": "https://example.com/coxs_bazar.jpg",
+        "category": "Bangladesh",
+        "subcategory": "Cox’s Bazar"
+      },
+      {
+        "id": 3,
+        "img": "https://example.com/borobudur_temple.jpg",
+        "category": "Indonesia",
+        "subcategory": "Borobudur Temple"
+      },
+      {
+        "id": 4,
+        "img": "https://example.com/phuket.jpg",
+        "category": "Thailand",
+        "subcategory": "Phuket"
+      },
+      {
+        "id": 5,
+        "img": "https://example.com/ha_long_bay.jpg",
+        "category": "Vietnam",
+        "subcategory": "Ha Long Bay"
+      },
+      {
+        "id": 6,
+        "img": "https://example.com/angkor_wat.jpg",
+        "category": "Cambodia",
+        "subcategory": "Angkor Wat"
+      }
+    ]
+  }
+  

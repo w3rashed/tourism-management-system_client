@@ -14,9 +14,7 @@ import SlideCard from "./SlideCard";
 const Slider = () => {
   const [slides, setSlides] = useState();
   useEffect(() => {
-    fetch(
-      "http://localhost:5000/destinations"
-    )
+    fetch("http://localhost:5000/destinations")
       .then((res) => res.json())
       .then((data) => {
         setSlides(data);
@@ -33,7 +31,6 @@ const Slider = () => {
         <Swiper
           // install Swiper modules
           modules={[Autoplay, Navigation, Pagination, A11y]}
-          
           slidesPerView={1}
           navigation={true}
           pagination={{ clickable: true }}
@@ -47,7 +44,7 @@ const Slider = () => {
         >
           <div>
             {slides?.map((slide) => (
-              <div key={slide.id}>
+              <div key={slide._id}>
                 <SwiperSlide>
                   <SlideCard slide={slide}></SlideCard>
                 </SwiperSlide>

@@ -1,3 +1,4 @@
+import { Helmet } from "react-helmet";
 import { FaUsers } from "react-icons/fa";
 import { IoLocationOutline, IoTimeOutline } from "react-icons/io5";
 import { useLoaderData } from "react-router-dom";
@@ -19,6 +20,9 @@ const ViewDetails = () => {
 
   return (
     <div className="px-5">
+      <Helmet>
+        <title>View_details-Discover Haven</title>
+      </Helmet>
       <div className="lg:w-[1140px] md:w-[760px] mx-auto">
         <div className=" ">
           <div>

@@ -236,7 +236,7 @@ const UpdateSpot = () => {
         <input
           className="btn bg-[#D2B48C] text-[#331A15] w-full mt-4"
           type="submit"
-          value="Add coffe"
+          value="Add Spot"
         />
       </form>
     </div>
