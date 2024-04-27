@@ -13,12 +13,12 @@ const DestinationsLists = () => {
   }, []);
   console.log(destinations);
   return (
-    <div>
-      <div>
-        <h3>Destination lists</h3>
-        <h2>Go Exotic Places</h2>
+    <div className="px-5">
+      <div className="text-center my-8">
+        <h3 className="text-2xl">Destination lists</h3>
+        <h2 className=" font-semibold text-5xl">Go Exotic Places</h2>
       </div>
-      <div className=" grid gap-6 grid-cols-3">
+      <div className=" grid gap-6 md:grid-cols-2 lg:grid-cols-3">
         {destinations.map((destination) => (
           <DestinationCard
             key={destination._id}

@@ -6,7 +6,10 @@ import Login from "../Components/User/Login";
 import Register from "../Components/User/Register";
 import AllTouristsSpot from "../Components/AllTouristsSpot/AllTouristsSpot";
 import ErrorPage from "../Components/ErrorPage/ErrorPage";
-import DestinationsLists from "../Components/Home/DestinationsLists/DestinationsLists";
+import ViewDetails from "../Components/Home/DestinationsLists/ViewDetails";
+import MyList from "../Components/MyList/MyList";
+import UpdateSpot from "../Components/UpdateSpot/UpdateSpot";
+import PrivateRoutes from "./PrivetRoutes/PrivetRoutes";
 
 const Routes = createBrowserRouter([
   {
@@ -20,7 +23,11 @@ const Routes = createBrowserRouter([
       },
       {
         path: "/add_tourists_spot",
-        element: <AddTouristsSpot></AddTouristsSpot>,
+        element: (
+          <PrivateRoutes>
+            <AddTouristsSpot></AddTouristsSpot>
+          </PrivateRoutes>
+        ),
       },
       {
         path: "/login",
@@ -34,6 +41,26 @@ const Routes = createBrowserRouter([
         path: "/all_tourists_spot",
         element: <AllTouristsSpot></AllTouristsSpot>,
         loader: () => fetch("http://localhost:5000/destinations"),
+      },
+      {
+        path: "/my_list",
+        element: (
+          <PrivateRoutes>
+            <MyList></MyList>
+          </PrivateRoutes>
+        ),
+      },
+      {
+        path: "/view_details/:_id",
+        element: <ViewDetails></ViewDetails>,
+        loader: ({ params }) =>
+          fetch(`http://localhost:5000/destinations/${params._id}`),
+      },
+      {
+        path: "/update/:_id",
+        element: <UpdateSpot></UpdateSpot>,
+        loader: ({ params }) =>
+          fetch(`http://localhost:5000/destinations/${params._id}`),
       },
     ],
   },

@@ -1,11 +1,25 @@
 import { useContext } from "react";
 import { AuthContext } from "../../Provider/AutProvider";
+import { useLoaderData } from "react-router-dom";
 import Swal from "sweetalert2";
-import { Helmet } from "react-helmet";
 
-const AddTouristsSpot = () => {
+const UpdateSpot = () => {
   const { user } = useContext(AuthContext);
-  const handleAddTouristsSpot = (e) => {
+  const spot = useLoaderData();
+  const {
+    spot_name,
+    country_name,
+    spot_location,
+    description,
+    average_cost,
+    seasonality,
+    travel_time,
+    visitors_per_year,
+    photo_url,
+    _id,
+  } = spot;
+  console.log(spot);
+  const handleUpdateSpot = (e) => {
     e.preventDefault();
     const form = e.target;
     const user_name = form.user_name.value;
@@ -20,7 +34,7 @@ const AddTouristsSpot = () => {
     const visitors_per_year = form.visitors_per_year.value;
     const photo_url = form.photo_url.value;
 
-    const spots = {
+    const updateSpotData = {
       user_name,
       user_email,
       spot_name,
@@ -33,38 +47,34 @@ const AddTouristsSpot = () => {
       visitors_per_year,
       photo_url,
     };
-    console.log(spots);
-
-    fetch("http://localhost:5000/destinations", {
-      method: "POST",
+    console.log(updateSpotData);
+    // send data to the server
+    fetch(`http://localhost:5000/destinations/${_id}`, {
+      method: "PUT",
       headers: {
-        "Content-Type": "application/json",
+        "content-type": "application/json",
       },
-      body: JSON.stringify(spots),
+      body: JSON.stringify(updateSpotData),
     })
       .then((res) => res.json())
       .then((data) => {
         console.log(data, "form client site");
-        if (data.insertedId) {
+        if (data.modifiedCount > 0) {
           Swal.fire({
             title: "success!",
-            text: "New Spot added successfully",
+            text: "Collections Updated successfully",
             icon: "success",
             confirmButtonText: "Cool",
           });
         }
       });
   };
-  console.log(user, "hiiiiiiiiiiiiiiiii");
   return (
     <div className="px-5">
-      <Helmet>
-        <title>AddTouristsSpot-Discover Haven</title>
-      </Helmet>
       <div className="text-center">
-        <h1>AddTouristsSpot</h1>
+        <h1>Update Tourist Spot</h1>
       </div>
-      <form onSubmit={handleAddTouristsSpot}>
+      <form onSubmit={handleUpdateSpot}>
         <div className=" grid grid-cols-1 md:grid-cols-2 lg:grid-cols-2 gap-6">
           <div className="">
             <label className="form-control  ">
@@ -101,6 +111,7 @@ const AddTouristsSpot = () => {
               <input
                 type="text"
                 name="spot_name"
+                defaultValue={spot_name}
                 placeholder="Enter tourists spot name"
                 className="input input-bordered w-full "
               />
@@ -112,8 +123,10 @@ const AddTouristsSpot = () => {
 
               <select
                 name="country_name"
+                defaultChecked={country_name}
                 className="input input-bordered w-full  "
               >
+                <option defaultValue={country_name}>{country_name}</option>
                 <option value="Bangladesh">Bangladesh</option>
                 <option value="Thailand">Thailand</option>
                 <option value="Indonesia">Indonesia</option>
@@ -129,6 +142,7 @@ const AddTouristsSpot = () => {
               <input
                 type="text"
                 name="spot_location"
+                defaultValue={spot_location}
                 placeholder="Enter spot location"
                 className="input input-bordered w-full  "
               />
@@ -143,6 +157,7 @@ const AddTouristsSpot = () => {
               <input
                 type="text"
                 name="description"
+                defaultValue={description}
                 placeholder="Enter a shotr description"
                 className="input input-bordered w-full  "
               />
@@ -152,23 +167,32 @@ const AddTouristsSpot = () => {
                 <span className="label-text">Average Cost</span>
               </div>
               <input
-                type="text"
+                type="number"
                 name="average_cost"
+                defaultValue={average_cost}
                 placeholder="Enter average cost"
                 className="input input-bordered w-full  "
               />
             </label>
+
             <label className="form-control w-full  ">
               <div className="label">
                 <span className="label-text">Seasonality</span>
               </div>
-              <input
-                type="text"
+
+              <select
                 name="seasonality"
-                placeholder="summer/ winter...."
+                defaultChecked={seasonality}
                 className="input input-bordered w-full  "
-              />
+              >
+                <option defaultValue={seasonality}>{seasonality}</option>
+                <option value="Spring">Spring</option>
+                <option value="Summer">Summer</option>
+                <option value="Fall">Fall</option>
+                <option value="Winter">Winter</option>
+              </select>
             </label>
+
             <label className="form-control w-full  ">
               <div className="label">
                 <span className="label-text">Travel Time</span>
@@ -176,6 +200,7 @@ const AddTouristsSpot = () => {
               <input
                 type="number"
                 name="travel_time"
+                defaultValue={travel_time}
                 placeholder="like- 7 days
                 "
                 className="input input-bordered w-full  "
@@ -188,6 +213,7 @@ const AddTouristsSpot = () => {
               <input
                 type="number"
                 name="visitors_per_year"
+                defaultValue={visitors_per_year}
                 placeholder="like- 10000
                 "
                 className="input input-bordered w-full  "
@@ -202,6 +228,7 @@ const AddTouristsSpot = () => {
           <input
             type="text"
             name="photo_url"
+            defaultValue={photo_url}
             placeholder="Enter photo URL"
             className="input input-bordered w-full  "
           />
@@ -216,4 +243,4 @@ const AddTouristsSpot = () => {
   );
 };
 
-export default AddTouristsSpot;
+export default UpdateSpot;

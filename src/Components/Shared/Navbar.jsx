@@ -25,7 +25,7 @@ const Navbar = () => {
               fontWeight: isActive ? "bold" : "",
               backgroundColor: isActive ? "transparent" : "",
               // border: isActive ? "1px solid #23BE0A" : "",
-              color: isActive ? "#ff5a5f" : "black",
+              color: isActive ? "#f7931e" : "black",
               viewTransitionName: isTransitioning ? "slide" : "",
             };
           }}
@@ -41,7 +41,7 @@ const Navbar = () => {
               fontWeight: isActive ? "bold" : "",
               backgroundColor: isActive ? "transparent" : "",
               // border: isActive ? "1px solid #23BE0A" : "",
-              color: isActive ? "#ff5a5f" : "black",
+              color: isActive ? "#f7931e" : "black",
               viewTransitionName: isTransitioning ? "slide" : "",
             };
           }}
@@ -57,13 +57,29 @@ const Navbar = () => {
               fontWeight: isActive ? "bold" : "",
               backgroundColor: isActive ? "transparent" : "",
               // border: isActive ? "1px solid #23BE0A" : "",
-              color: isActive ? "#ff5a5f" : "black",
+              color: isActive ? "#f7931e" : "black",
               viewTransitionName: isTransitioning ? "slide" : "",
             };
           }}
           to="/add_tourists_spot"
         >
           Add Tourists Spot
+        </NavLink>
+      </li>
+      <li>
+        <NavLink
+          style={({ isActive, isTransitioning }) => {
+            return {
+              fontWeight: isActive ? "bold" : "",
+              backgroundColor: isActive ? "transparent" : "",
+              // border: isActive ? "1px solid #23BE0A" : "",
+              color: isActive ? "#f7931e" : "black",
+              viewTransitionName: isTransitioning ? "slide" : "",
+            };
+          }}
+          to="/my_list"
+        >
+          My List
         </NavLink>
       </li>
     </>
@@ -102,7 +118,7 @@ const Navbar = () => {
           </div>
           <Link to="/">
             <button className="font-bold text-xl">
-              Discover<span className="text-[#ff5a5f]">Haven</span>
+              Discover<span className="text-[#f7931e]">Haven</span>
             </button>
           </Link>
         </div>
