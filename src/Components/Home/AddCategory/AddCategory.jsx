@@ -7,7 +7,6 @@ const AddCategory = () => {
     const spot_name = form.spot_name.value;
     const country_name = form.country_name.value;
     const photo_url = form.photo_url.value;
-
     const categorys = {
       spot_name,
       country_name,

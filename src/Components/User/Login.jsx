@@ -1,5 +1,5 @@
 import { useContext, useState } from "react";
-import { FaGoogle, FaRegEye, FaRegEyeSlash, FaTwitter } from "react-icons/fa";
+import { FaGithubSquare, FaGoogle, FaRegEye, FaRegEyeSlash, FaTwitter } from "react-icons/fa";
 import { Link, useLocation, useNavigate } from "react-router-dom";
 
 import { toast } from "react-toastify";
@@ -7,7 +7,7 @@ import { AuthContext } from "../../Provider/AutProvider";
 import { Helmet } from "react-helmet";
 
 const Login = () => {
-  const { signInUser, googleLogin, twitterLogin, setLoad } =
+  const { signInUser, googleLogin, twitterLogin, githubLogin, setLoad } =
     useContext(AuthContext);
   const [showPassword, setShowPassword] = useState(false);
   const [error, setError] = useState("");
@@ -56,11 +56,11 @@ const Login = () => {
     });
   };
 
-  // handle twitter log in
-  const handleTwitterLogin = () => {
-    twitterLogin().then(() => {
+  // handle Github log in
+  const handleGithubLogin = () => {
+    githubLogin().then(() => {
       navigate(location?.state ? location.state : "/");
-      toast.success("successfully twitter signed in", {
+      toast.success("successfully Github signed in", {
         position: "top-center",
       });
     });
@@ -71,7 +71,6 @@ const Login = () => {
       <Helmet>
         <title>Login-Discover Haven</title>
       </Helmet>
-      
 
       <div className="card-body">
         <div>
@@ -80,9 +79,9 @@ const Login = () => {
             <FaGoogle></FaGoogle>
             Login With Google
           </button>
-          <button onClick={handleTwitterLogin} className="btn w-full my-4">
-            <FaTwitter></FaTwitter>
-            Login With Twitter
+          <button onClick={handleGithubLogin} className="btn w-full my-4">
+            <FaGithubSquare></FaGithubSquare>
+            Login With Git hub
           </button>
           <div className="border-b my-4"></div>
         </div>

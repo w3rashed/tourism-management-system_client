@@ -73,11 +73,11 @@ const MyList = () => {
           </thead>
           <tbody>
             {lodedData.map((data, idx) => (
-              <tr key={data._id} className="hover">
+              <tr key={data._id} className="hover font-medium">
                 <th>{idx + 1}</th>
                 <td>{data.spot_name}</td>
                 <td>{data.country_name}</td>
-                <td>{data.average_cost}</td>
+                <td>$ {data.average_cost}</td>
                 <td className="flex text-xl gap-4">
                   <Link to={`/update/${data._id}`}>
                     <button>

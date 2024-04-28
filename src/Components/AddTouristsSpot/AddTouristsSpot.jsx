@@ -1,10 +1,29 @@
-import { useContext } from "react";
+import { useContext, useEffect, useState } from "react";
 import { AuthContext } from "../../Provider/AutProvider";
 import Swal from "sweetalert2";
 import { Helmet } from "react-helmet";
 
 const AddTouristsSpot = () => {
   const { user } = useContext(AuthContext);
+  const [lodedData, setLodedData] = useState();
+  const [spotdata, setSpotdata] = useState();
+  console.log(spotdata);
+
+  useEffect(() => {
+    fetch("http://localhost:5000/countries")
+      .then((res) => res.json())
+      .then((data) => setLodedData(data));
+  }, []);
+  console.log(lodedData);
+
+  const handleSelectCountry = (e) => {
+    e.preventDefault();
+    const country = e.target.value;
+    console.log(country);
+    const filter = lodedData.find((data) => country == data.country_name);
+    setSpotdata(filter.places);
+  };
+
   const handleAddTouristsSpot = (e) => {
     e.preventDefault();
     const form = e.target;
@@ -94,34 +113,41 @@ const AddTouristsSpot = () => {
                 className="input input-bordered w-full "
               />
             </label>
-            <label className="form-control  ">
-              <div className="label">
-                <span className="label-text ">Tourists Spot Name</span>
-              </div>
-              <input
-                type="text"
-                name="spot_name"
-                placeholder="Enter tourists spot name"
-                className="input input-bordered w-full "
-              />
-            </label>
+
             <label className="form-control w-full  ">
               <div className="label">
                 <span className="label-text">Country Name</span>
               </div>
 
               <select
+                onChange={handleSelectCountry}
                 name="country_name"
                 className="input input-bordered w-full  "
               >
-                <option value="Bangladesh">Bangladesh</option>
-                <option value="Thailand">Thailand</option>
-                <option value="Indonesia">Indonesia</option>
-                <option value="Malaysia">Malaysia</option>
-                <option value="Vietnam">Vietnam</option>
-                <option value="Cambodia">Cambodia</option>
+                {lodedData?.map((data) => (
+                  <option key={data._id} value={data.country_name}>
+                    {data.country_name}
+                  </option>
+                ))}
               </select>
             </label>
+            <label className="form-control w-full  ">
+              <div className="label">
+                <span className="label-text">Tourists Spot Name</span>
+              </div>
+
+              <select
+                name="spot_name"
+                className="input input-bordered w-full  "
+              >
+                {spotdata?.map((data, idx) => (
+                  <option key={idx} value={data}>
+                    {data}
+                  </option>
+                ))}
+              </select>
+            </label>
+
             <label className="form-control w-full  ">
               <div className="label">
                 <span className="label-text">Spot Location</span>

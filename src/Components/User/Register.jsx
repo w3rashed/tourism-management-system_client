@@ -1,5 +1,10 @@
 import { useContext, useState } from "react";
-import { FaGoogle, FaRegEyeSlash, FaTwitter } from "react-icons/fa";
+import {
+  FaGithubSquare,
+  FaGoogle,
+  FaRegEyeSlash,
+  
+} from "react-icons/fa";
 import { Link, useLocation, useNavigate } from "react-router-dom";
 import { useForm } from "react-hook-form";
 import { toast } from "react-toastify";
@@ -9,7 +14,7 @@ import { AuthContext } from "../../Provider/AutProvider";
 import { Helmet } from "react-helmet";
 
 const Register = () => {
-  const { googleLogin, twitterLogin, createUser, updateUser, setLoad } =
+  const { googleLogin, githubLogin, createUser, updateUser, setLoad } =
     useContext(AuthContext);
   const [showPassword, setShowPassword] = useState(false);
   const [confShowPassword, setConfShowPassword] = useState(false);
@@ -63,13 +68,13 @@ const Register = () => {
     });
   };
 
-  // handle twitter log in
-  const handleTwitterLogin = () => {
-    twitterLogin().then(() => {
-      toast.success("successfully Twitter Registered ", {
+  // handle Github reg
+  const handleGithubLogin = () => {
+    githubLogin().then(() => {
+      navigate(location?.state ? location.state : "/");
+      toast.success("successfully Github signed in", {
         position: "top-center",
       });
-      navigate(location?.state ? location.state : "/");
     });
   };
 
@@ -78,7 +83,7 @@ const Register = () => {
       <Helmet>
         <title>Register-Discover Haven</title>
       </Helmet>
-      
+
       <div className=" basis-[50%]">
         <div>
           <h3 className="text-[#006c70] text-lg font-semibold">Register</h3>
@@ -88,9 +93,9 @@ const Register = () => {
             <FaGoogle></FaGoogle>
             Login With Google
           </button>
-          <button onClick={handleTwitterLogin} className="btn w-full my-4">
-            <FaTwitter></FaTwitter>
-            Login With Twitter
+          <button onClick={handleGithubLogin} className="btn w-full my-4">
+            <FaGithubSquare></FaGithubSquare>
+            Login With Git hub
           </button>
           <div className="border-b my-4"></div>
         </div>

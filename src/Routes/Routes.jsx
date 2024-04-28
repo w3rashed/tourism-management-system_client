@@ -65,7 +65,17 @@ const Routes = createBrowserRouter([
       },
       {
         path: "add_cetegory",
-        element: <AddCategory></AddCategory>,
+        element: (
+          <PrivateRoutes>
+            <AddCategory></AddCategory>
+          </PrivateRoutes>
+        ),
+      },
+      {
+        path: "/all_tourists_spot/:country",
+        element: <AllTouristsSpot></AllTouristsSpot>,
+        loader: ({ params }) =>
+          fetch(`http://localhost:5000/destinationByCounty/${params.country}`),
       },
     ],
   },
