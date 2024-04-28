@@ -20,7 +20,7 @@ const AllTouristsSpot = () => {
     console.log(e.target.value);
     if (e.target.value == "average_cost") {
       const cost = data.sort((a, b) => b.average_cost - a.average_cost);
-      setData(cost);
+      setData(Array.from(cost));
       console.log(data);
     }
   };
@@ -49,7 +49,7 @@ const AllTouristsSpot = () => {
               <select
                 onChange={handlesortByCost}
                 name="spot_name"
-                className="mt-3   "
+                className="mt-3  outline-none"
               >
                 <option value="">Select</option>
                 <option value="average_cost">Average Cost</option>
