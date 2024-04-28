@@ -2,6 +2,7 @@ import { useContext, useEffect, useState } from "react";
 import { Link, NavLink, useNavigate } from "react-router-dom";
 import { AuthContext } from "../../Provider/AutProvider";
 import { toast } from "react-toastify";
+import { Zoom } from "react-awesome-reveal";
 
 const Navbar = () => {
   const { user, logOut } = useContext(AuthContext);
@@ -160,7 +161,9 @@ const Navbar = () => {
           </Link>
         </div>
         <div className=" hidden lg:flex ">
-          <ul className="menu menu-horizontal px-1">{links}</ul>
+          <ul className="menu menu-horizontal px-1">
+            <Zoom className="flex">{links}</Zoom>
+          </ul>
         </div>
 
         <div className="flex gap-3">
@@ -174,7 +177,7 @@ const Navbar = () => {
               >
                 {/* dropdown user */}
                 <div className=" rounded-full">
-                  <Link >
+                  <Link>
                     <div className=" rounded-full ">
                       <img
                         alt="Tailwind CSS Navbar component "

@@ -1,4 +1,5 @@
 import { useEffect, useState } from "react";
+import { Zoom } from "react-awesome-reveal";
 import { Link } from "react-router-dom";
 
 const Category = () => {
@@ -24,12 +25,14 @@ const Category = () => {
             >
               <div className="hero-overlay bg-opacity-60 rounded-lg"></div>
               <div className="hero-content text-center text-neutral-content">
-                <div className="max-w-md">
-                  <h1 className="mb-5 text-5xl font-bold">
-                    {item.country_name}
-                  </h1>
-                  <p className="mb-5">{item.spot_name}.</p>
-                </div>
+                <Zoom>
+                  <div className="max-w-md">
+                    <h1 className="mb-5 text-5xl font-bold">
+                      {item.country_name}
+                    </h1>
+                    <p className="mb-5">{item.spot_name}.</p>
+                  </div>
+                </Zoom>
               </div>
             </div>
           </Link>
