@@ -174,7 +174,7 @@ const Navbar = () => {
               >
                 {/* dropdown user */}
                 <div className=" rounded-full">
-                  <Link to="/update">
+                  <Link >
                     <div className=" rounded-full ">
                       <img
                         alt="Tailwind CSS Navbar component "
@@ -189,25 +189,39 @@ const Navbar = () => {
                     <li>
                       <a>{user.displayName}</a>
                     </li>
+                    <li>
+                      <button onClick={handleLogOut} className="btn">
+                        Sign Out
+                      </button>
+                    </li>
                   </ul>
                 </div>
               </div>
             )}
           </div>
           <div>
-            {user ? (
-              <button onClick={handleLogOut} className="btn">
-                Sign Out
-              </button>
-            ) : (
-              <Link
-                to="/login"
-                state={{ from: location?.state?.from }}
-                replace
-                className="btn"
-              >
-                Login
-              </Link>
+            {!user && (
+              // <button onClick={handleLogOut} className="btn">
+              //   Sign Out
+              // </button>
+              <div className="">
+                <Link
+                  to="/login"
+                  state={{ from: location?.state?.from }}
+                  replace
+                  className="btn"
+                >
+                  Login
+                </Link>
+                <Link
+                  to="/register"
+                  state={{ from: location?.state?.from }}
+                  replace
+                  className="btn ml-2"
+                >
+                  Register
+                </Link>
+              </div>
             )}
           </div>
           {/* theme controler */}

@@ -1,20 +1,12 @@
 import { Helmet } from "react-helmet";
-import { useLoaderData } from "react-router-dom";
 import AllSpotsCard from "./AllSpotsCard";
 import { useState } from "react";
 import { FaSortAlphaDownAlt } from "react-icons/fa";
-import { useEffect } from "react";
+import { useLoaderData } from "react-router-dom";
 
 const AllTouristsSpot = () => {
-  const [data, setData] = useState([]);
-
-  useEffect(() => {
-    fetch("https://discover-haven-server.vercel.app/destinations")
-      .then((res) => res.json())
-      .then((data) => {
-        setData(data);
-      });
-  }, []);
+  const lodedData = useLoaderData();
+  const [data, setData] = useState(lodedData || []);
 
   const handlesortByCost = (e) => {
     console.log(e.target.value);
