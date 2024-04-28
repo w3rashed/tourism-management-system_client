@@ -17,9 +17,15 @@ const AllSpotsCard = ({ spots }) => {
     <div>
       <div className="card  bg-base-100 shadow-xl">
         <div>
-          <figure>
-            <img className="h-[400px] w-full" src={photo_url} alt="" />
-          </figure>
+          <div>
+            <figure>
+              <img
+                className="h-[400px] w-full rounded-lg"
+                src={photo_url}
+                alt=""
+              />
+            </figure>
+          </div>
         </div>
         <div className="card-body">
           <h2 className="card-title">{spot_name}</h2>
