@@ -13,7 +13,7 @@ const MyList = () => {
 
   console.log(user);
   useEffect(() => {
-    fetch(`http://localhost:5000/user/${user?.email}`)
+    fetch(`https://discover-haven-server.vercel.app/user/${user?.email}`)
       .then((res) => res.json())
       .then((data) => {
         setLodedData(data);
@@ -34,7 +34,7 @@ const MyList = () => {
       confirmButtonText: "Yes, delete it!",
     }).then((result) => {
       if (result.isConfirmed) {
-        fetch(`http://localhost:5000/destinations/${_id}`, {
+        fetch(`https://discover-haven-server.vercel.app/destinations/${_id}`, {
           method: "DELETE",
         })
           .then((res) => res.json())

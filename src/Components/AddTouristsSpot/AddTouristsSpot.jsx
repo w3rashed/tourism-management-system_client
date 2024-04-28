@@ -10,7 +10,7 @@ const AddTouristsSpot = () => {
   console.log(spotdata);
 
   useEffect(() => {
-    fetch("http://localhost:5000/countries")
+    fetch("https://discover-haven-server.vercel.app/countries")
       .then((res) => res.json())
       .then((data) => setLodedData(data));
   }, []);

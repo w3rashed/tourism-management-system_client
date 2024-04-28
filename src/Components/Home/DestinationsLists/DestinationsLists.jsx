@@ -5,7 +5,7 @@ import DestinationCard from "./DestinationCard";
 const DestinationsLists = () => {
   const [destinations, setDestinations] = useState([]);
   useEffect(() => {
-    fetch("http://localhost:5000/destinations")
+    fetch("https://discover-haven-server.vercel.app/destinations")
       .then((res) => res.json())
       .then((data) => {
         setDestinations(data.slice(0, 6));

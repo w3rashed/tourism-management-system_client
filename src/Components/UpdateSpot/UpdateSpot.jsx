@@ -49,7 +49,7 @@ const UpdateSpot = () => {
     };
     console.log(updateSpotData);
     // send data to the server
-    fetch(`http://localhost:5000/destinations/${_id}`, {
+    fetch(`https://discover-haven-server.vercel.app/destinations/${_id}`, {
       method: "PUT",
       headers: {
         "content-type": "application/json",

@@ -41,7 +41,8 @@ const Routes = createBrowserRouter([
       {
         path: "/all_tourists_spot",
         element: <AllTouristsSpot></AllTouristsSpot>,
-        loader: () => fetch("http://localhost:5000/destinations"),
+        loader: () =>
+          fetch("https://discover-haven-server.vercel.app/destinations"),
       },
       {
         path: "/my_list",
@@ -55,13 +56,17 @@ const Routes = createBrowserRouter([
         path: "/view_details/:_id",
         element: <ViewDetails></ViewDetails>,
         loader: ({ params }) =>
-          fetch(`http://localhost:5000/destinations/${params._id}`),
+          fetch(
+            `https://discover-haven-server.vercel.app/destinations/${params._id}`
+          ),
       },
       {
         path: "/update/:_id",
         element: <UpdateSpot></UpdateSpot>,
         loader: ({ params }) =>
-          fetch(`http://localhost:5000/destinations/${params._id}`),
+          fetch(
+            `https://discover-haven-server.vercel.app/destinations/${params._id}`
+          ),
       },
       {
         path: "add_cetegory",
@@ -75,7 +80,9 @@ const Routes = createBrowserRouter([
         path: "/all_tourists_spot/:country",
         element: <AllTouristsSpot></AllTouristsSpot>,
         loader: ({ params }) =>
-          fetch(`http://localhost:5000/destinationByCounty/${params.country}`),
+          fetch(
+            `https://discover-haven-server.vercel.app/destinationByCounty/${params.country}`
+          ),
       },
     ],
   },

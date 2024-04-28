@@ -14,7 +14,7 @@ const AddCategory = () => {
     };
     console.log(categorys);
 
-    fetch("http://localhost:5000/countries", {
+    fetch("https://discover-haven-server.vercel.app/countries", {
       method: "POST",
       headers: {
         "Content-Type": "application/json",

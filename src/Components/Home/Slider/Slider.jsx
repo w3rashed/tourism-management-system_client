@@ -14,7 +14,7 @@ import SlideCard from "./SlideCard";
 const Slider = () => {
   const [slides, setSlides] = useState();
   useEffect(() => {
-    fetch("http://localhost:5000/destinations")
+    fetch("https://discover-haven-server.vercel.app/destinations")
       .then((res) => res.json())
       .then((data) => {
         setSlides(data);

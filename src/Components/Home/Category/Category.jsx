@@ -4,7 +4,7 @@ import { Link } from "react-router-dom";
 const Category = () => {
   const [data, setDate] = useState([]);
   useEffect(() => {
-    fetch("http://localhost:5000/countries")
+    fetch("https://discover-haven-server.vercel.app/countries")
       .then((res) => res.json())
       .then((data) => {
         setDate(data.slice(0, 6));
