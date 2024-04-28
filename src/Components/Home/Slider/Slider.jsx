@@ -22,12 +22,7 @@ const Slider = () => {
   }, []);
   return (
     <div className=" ">
-      <div
-        data-aos="fade-up"
-        data-aos-duration="1500"
-        data-aos-delay="600"
-        className=""
-      >
+      <div className="">
         <Swiper
           // install Swiper modules
           modules={[Autoplay, Navigation, Pagination, A11y]}
@@ -37,7 +32,7 @@ const Slider = () => {
           onSwiper={(swiper) => console.log(swiper)}
           onSlideChange={() => console.log("slide change")}
           autoplay={{
-            delay: 2500,
+            delay: 4000,
             disableOnInteraction: false,
           }}
           style={{ zIndex: 0 }}

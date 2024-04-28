@@ -1,10 +1,13 @@
 import { Helmet } from "react-helmet";
 import { useLoaderData } from "react-router-dom";
 import AllSpotsCard from "./AllSpotsCard";
+import { useState } from "react";
 
 const AllTouristsSpot = () => {
   const allSpots = useLoaderData();
-  
+  const [data,setData]=useState(allSpots)
+ 
+
   console.log(allSpots);
   return (
     <div>
