@@ -19,10 +19,10 @@ const DestinationCard = ({ destination }) => {
             <div className="max-w-md">
               <div>
                 <Zoom duration="1000" delay="40">
-                  <h1 className="mb-5 text-5xl font-bold">{spot_name}</h1>
+                  <h1 className="mb-5 text-5xl font-bold ">{spot_name}</h1>
                 </Zoom>
                 <Zoom duration="1000" delay="50">
-                  <p className="mb-5">{country_name}</p>
+                  <p className="mb-5 font-Comforter_Brush text-2xl ">{country_name}</p>
                 </Zoom>
               </div>
               <Zoom duration="1000" delay="60">
@@ -31,7 +31,7 @@ const DestinationCard = ({ destination }) => {
                     to={`/view_details/${_id}`}
                     className="bg-[#f7931e] text-black px-4 py-2 rounded-lg"
                   >
-                    <Zoom duration="1000" delay="70">
+                    <Zoom duration="1000" delay="0">
                       <button className="flex items-center gap-1">
                         View Details <IoArrowForwardSharp></IoArrowForwardSharp>
                       </button>

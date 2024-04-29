@@ -12,7 +12,7 @@ const Home = () => {
         <title>Home-Discover Haven</title>
       </Helmet>
       <Slider></Slider>
-      <div className="my-5">
+      <div className="mt-20">
         <DestinationsLists></DestinationsLists>
       </div>
       <Discount></Discount>

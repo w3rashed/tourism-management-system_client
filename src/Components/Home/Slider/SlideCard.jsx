@@ -5,9 +5,9 @@ const SlideCard = ({ slide }) => {
   return (
     <div className="">
       <div className=" left-[30vh] z-10 absolute top-[30%] text-white">
-        <h1 className="text-4xl">Discover Haven</h1>
+        <h1 className="text-4xl font-Comforter_Brush">Discover Haven</h1>
 
-        <h2 className="text-6xl">
+        <h2 className="text-6xl mb-4">
           <Typewriter
             words={["Your Journey Begins Here"]}
             loop={99999900}

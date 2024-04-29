@@ -79,7 +79,7 @@ const Login = () => {
 
       <div className="card-body">
         <div>
-          <h3 className="text-[#006c70] text-lg font-semibold">Login</h3>
+          <h3 className="text-[#006c70] text-lg font-semibold fon">Login</h3>
           <button onClick={handleGoogleLogin} className="btn w-full mt-4">
             <FaGoogle></FaGoogle>
             Login With Google

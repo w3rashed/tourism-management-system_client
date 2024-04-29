@@ -212,7 +212,7 @@ const Navbar = () => {
                   to="/login"
                   state={{ from: location?.state?.from }}
                   replace
-                  className="btn"
+                  className="btn ml-2 bg-[#f7931e] text-white hover:text-[#f7931e] hover:bg-transparent hover:border-[#f7931e] duration-1000"
                 >
                   Login
                 </Link>
@@ -220,7 +220,7 @@ const Navbar = () => {
                   to="/register"
                   state={{ from: location?.state?.from }}
                   replace
-                  className="btn ml-2"
+                  className="btn ml-2 bg-[#f7931e] text-white hover:text-[#f7931e] hover:bg-transparent hover:border-[#f7931e] duration-1000"
                 >
                   Register
                 </Link>

@@ -14,10 +14,12 @@ const DestinationsLists = () => {
   }, []);
   console.log(destinations);
   return (
-    <div className="px-5">
+    <div className="px-5 ">
       <div className="text-center my-8">
         <Zoom duration="1000">
-          <h3 className="text-2xl">Destination lists</h3>
+          <h3 className="text-2xl font-Comforter_Brush text-[#f7931e]">
+            Destination lists
+          </h3>
           <Zoom duration="1000" delay="20">
             <h2 className=" font-semibold text-5xl">Go Exotic Places</h2>
           </Zoom>
