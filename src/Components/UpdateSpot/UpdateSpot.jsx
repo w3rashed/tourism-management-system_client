@@ -104,18 +104,6 @@ const UpdateSpot = () => {
                 className="input input-bordered w-full "
               />
             </label>
-            <label className="form-control  ">
-              <div className="label">
-                <span className="label-text ">Tourists Spot Name</span>
-              </div>
-              <input
-                type="text"
-                name="spot_name"
-                defaultValue={spot_name}
-                placeholder="Enter tourists spot name"
-                className="input input-bordered w-full "
-              />
-            </label>
             <label className="form-control w-full  ">
               <div className="label">
                 <span className="label-text">Country Name</span>
@@ -135,6 +123,19 @@ const UpdateSpot = () => {
                 <option value="Cambodia">Cambodia</option>
               </select>
             </label>
+            <label className="form-control  ">
+              <div className="label">
+                <span className="label-text ">Tourists Spot Name</span>
+              </div>
+              <input
+                type="text"
+                name="spot_name"
+                defaultValue={spot_name}
+                placeholder="Enter tourists spot name"
+                className="input input-bordered w-full "
+              />
+            </label>
+
             <label className="form-control w-full  ">
               <div className="label">
                 <span className="label-text">Spot Location</span>

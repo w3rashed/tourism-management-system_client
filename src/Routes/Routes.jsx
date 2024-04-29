@@ -54,7 +54,11 @@ const Routes = createBrowserRouter([
       },
       {
         path: "/view_details/:_id",
-        element: <ViewDetails></ViewDetails>,
+        element: (
+          <PrivateRoutes>
+            <ViewDetails></ViewDetails>,
+          </PrivateRoutes>
+        ),
         loader: ({ params }) =>
           fetch(
             `https://discover-haven-server.vercel.app/destinations/${params._id}`

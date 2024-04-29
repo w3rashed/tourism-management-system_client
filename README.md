@@ -1,6 +1,8 @@
 # [Discover Haven](https://discover-haven.web.app/)
 
 ## Features and Characteristics
+  
+  **Southeast Asia**
 - **React-simple-typewriter**: Create dynamic text effects to captivate users.
 - **React-awesome-reveal**: Implement stunning element animations for enhanced user engagement.
 - **React Hooks**: Efficient state management for seamless performance.

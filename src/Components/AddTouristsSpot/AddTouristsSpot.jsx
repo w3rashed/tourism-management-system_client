@@ -54,7 +54,7 @@ const AddTouristsSpot = () => {
     };
     console.log(spots);
 
-    fetch("http://localhost:5000/destinations", {
+    fetch("https://discover-haven-server.vercel.app/destinations", {
       method: "POST",
       headers: {
         "Content-Type": "application/json",
@@ -124,6 +124,7 @@ const AddTouristsSpot = () => {
                 name="country_name"
                 className="input input-bordered w-full  "
               >
+                <option value="">Country</option>
                 {lodedData?.map((data) => (
                   <option key={data._id} value={data.country_name}>
                     {data.country_name}

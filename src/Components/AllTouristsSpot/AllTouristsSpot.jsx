@@ -45,8 +45,6 @@ const AllTouristsSpot = () => {
               >
                 <option value="">Select</option>
                 <option value="average_cost">Average Cost</option>
-                <option value="name">name</option>
-                <option value="place">place</option>
               </select>
             </label>
           </div>
