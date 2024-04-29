@@ -10,7 +10,7 @@ const SlideCard = ({ slide }) => {
         <h2 className="text-6xl">
           <Typewriter
             words={["Your Journey Begins Here"]}
-            loop={100}
+            loop={99999900}
             cursor
             cursorStyle="_"
             typeSpeed={30}

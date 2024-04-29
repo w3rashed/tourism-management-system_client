@@ -3,6 +3,7 @@ import Slider from "../Slider/Slider";
 import DestinationsLists from "./DestinationsLists";
 import Discount from "../Discount/Discount";
 import Category from "../Category/Category";
+import Gallery from "../Gallery/Gallery";
 
 const Home = () => {
   return (
@@ -16,6 +17,7 @@ const Home = () => {
       </div>
       <Discount></Discount>
       <Category></Category>
+      <Gallery></Gallery>
     </div>
   );
 };

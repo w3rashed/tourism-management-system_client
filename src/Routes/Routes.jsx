@@ -10,7 +10,7 @@ import MyList from "../Components/MyList/MyList";
 import UpdateSpot from "../Components/UpdateSpot/UpdateSpot";
 import PrivateRoutes from "./PrivetRoutes/PrivetRoutes";
 import Home from "../Components/Home/DestinationsLists/Home";
-import AddCategory from "../Components/Home/AddCategory/AddCategory";
+import AddCategory from "../Components/AddCategory/AddCategory";
 
 const Routes = createBrowserRouter([
   {
