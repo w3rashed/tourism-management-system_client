@@ -166,28 +166,28 @@ const Navbar = () => {
           </ul>
         </div>
 
-        <div className="flex gap-3">
+        <div className="flex gap-3 ">
           <div className="">
             {/* user profile */}
             {user && (
               <div
                 tabIndex={0}
                 role="button"
-                className="btn btn-ghost btn-circle avatar dropdown dropdown-hover mr-2"
+                className=" w-12 h-12 rounded-full dropdown dropdown-hover mr-2"
               >
                 {/* dropdown user */}
-                <div className=" rounded-full">
-                  <Link>
-                    <div className=" rounded-full ">
-                      <img
-                        alt="Tailwind CSS Navbar component "
-                        src={user.photoURL}
-                      />
-                    </div>
-                  </Link>
+                <div className=" rounded-full ">
+                  <div className=" rounded-full ">
+                    <img
+                      className="rounded-full w-12 h-12"
+                      alt="Tailwind CSS Navbar component "
+                      src={user.photoURL}
+                    />
+                  </div>
+
                   <ul
                     tabIndex={0}
-                    className="dropdown-content z-[1] menu p-2 shadow bg-base-100 rounded-box w-52 "
+                    className="dropdown-content z-[500] menu p-2 shadow bg-base-100 rounded-box w-52 "
                   >
                     <li>
                       <a>{user.displayName}</a>

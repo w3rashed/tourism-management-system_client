@@ -1,5 +1,10 @@
 import { useContext, useState } from "react";
-import { FaGithubSquare, FaGoogle, FaRegEye, FaRegEyeSlash, FaTwitter } from "react-icons/fa";
+import {
+  FaGithubSquare,
+  FaGoogle,
+  FaRegEye,
+  FaRegEyeSlash,
+} from "react-icons/fa";
 import { Link, useLocation, useNavigate } from "react-router-dom";
 
 import { toast } from "react-toastify";
@@ -7,14 +12,14 @@ import { AuthContext } from "../../Provider/AutProvider";
 import { Helmet } from "react-helmet";
 
 const Login = () => {
-  const { signInUser, googleLogin, twitterLogin, githubLogin, setLoad } =
+  const { signInUser, googleLogin, githubLogin, setLoad } =
     useContext(AuthContext);
   const [showPassword, setShowPassword] = useState(false);
   const [error, setError] = useState("");
 
   const location = useLocation();
   const navigate = useNavigate();
-  console.log("location from login page", location);
+  const from = location.state?.from || "/";
 
   const handleLogin = (e) => {
     e.preventDefault();
@@ -30,8 +35,8 @@ const Login = () => {
     signInUser(email, password)
       .then((result) => {
         console.log(result.user);
-        navigate(location?.state ? location.state : "/");
         setLoad(true);
+        navigate(from, { replace: true });
         toast.success("Successfully signed in", {
           position: "top-center",
         });
@@ -49,17 +54,17 @@ const Login = () => {
   // handle google log in
   const handleGoogleLogin = () => {
     googleLogin().then(() => {
-      navigate(location?.state ? location.state : "/");
       toast.success("successfully google signed in", {
         position: "top-center",
       });
+      navigate(from, { replace: true });
     });
   };
 
   // handle Github log in
   const handleGithubLogin = () => {
     githubLogin().then(() => {
-      navigate(location?.state ? location.state : "/");
+      navigate(from, { replace: true });
       toast.success("successfully Github signed in", {
         position: "top-center",
       });

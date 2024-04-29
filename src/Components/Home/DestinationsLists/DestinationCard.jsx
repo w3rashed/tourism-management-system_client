@@ -14,23 +14,31 @@ const DestinationCard = ({ destination }) => {
         }}
       >
         <div className="hero-overlay bg-opacity-50 rounded-lg"></div>
-        <Zoom>
-          <div className="hero-content text-center text-neutral-content">
+        <Zoom duration="1000" delay="30">
+          <div className="hero-content text-center text-white">
             <div className="max-w-md">
               <div>
-                <h1 className="mb-5 text-5xl font-bold">{spot_name}</h1>
-                <p className="mb-5">{country_name}</p>
+                <Zoom duration="1000" delay="40">
+                  <h1 className="mb-5 text-5xl font-bold">{spot_name}</h1>
+                </Zoom>
+                <Zoom duration="1000" delay="50">
+                  <p className="mb-5">{country_name}</p>
+                </Zoom>
               </div>
-              <div className="flex justify-center ">
-                <Link
-                  to={`/view_details/${_id}`}
-                  className="bg-[#f7931e] text-black px-4 py-2 rounded-lg"
-                >
-                  <button className="flex items-center gap-1">
-                    View Details <IoArrowForwardSharp></IoArrowForwardSharp>
-                  </button>
-                </Link>
-              </div>
+              <Zoom duration="1000" delay="60">
+                <div className="flex justify-center ">
+                  <Link
+                    to={`/view_details/${_id}`}
+                    className="bg-[#f7931e] text-black px-4 py-2 rounded-lg"
+                  >
+                    <Zoom duration="1000" delay="70">
+                      <button className="flex items-center gap-1">
+                        View Details <IoArrowForwardSharp></IoArrowForwardSharp>
+                      </button>
+                    </Zoom>
+                  </Link>
+                </div>
+              </Zoom>
             </div>
           </div>
         </Zoom>

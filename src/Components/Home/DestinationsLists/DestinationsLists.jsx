@@ -16,9 +16,11 @@ const DestinationsLists = () => {
   return (
     <div className="px-5">
       <div className="text-center my-8">
-        <Zoom>
+        <Zoom duration="1000">
           <h3 className="text-2xl">Destination lists</h3>
-          <h2 className=" font-semibold text-5xl">Go Exotic Places</h2>
+          <Zoom duration="1000" delay="20">
+            <h2 className=" font-semibold text-5xl">Go Exotic Places</h2>
+          </Zoom>
         </Zoom>
       </div>
       <div className=" grid gap-6 md:grid-cols-2 lg:grid-cols-3">

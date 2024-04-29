@@ -14,7 +14,7 @@ const Home = () => {
       <div className="my-5">
         <DestinationsLists></DestinationsLists>
       </div>
-      {/* <Discount></Discount> */}
+      <Discount></Discount>
       <Category></Category>
     </div>
   );
