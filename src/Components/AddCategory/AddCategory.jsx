@@ -35,7 +35,7 @@ const AddCategory = () => {
       });
   };
   return (
-    <div>
+    <div className="container mx-auto">
       <form onSubmit={handleAddCategory}>
         <div className=" md:w-[70%] lg:w-[50%]  mx-auto px-5">
           <div className="">

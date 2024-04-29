@@ -69,7 +69,7 @@ const Navbar = () => {
           }}
           to="/all_tourists_spot"
         >
-          All Tourists Spot
+          All Tourists Spots
         </NavLink>
       </li>
       <li>
@@ -85,7 +85,7 @@ const Navbar = () => {
           }}
           to="/add_tourists_spot"
         >
-          Add Tourists Spot
+          Add Tourists Spots
         </NavLink>
       </li>
       <li>
@@ -123,8 +123,8 @@ const Navbar = () => {
     </>
   );
   return (
-    <div className="my-6">
-      <div className="  flex lg:justify-around  justify-evenly md:justify-evenly items-center  bg-base-100 ">
+    <div className="my-6 overflow-hidden">
+      <div className="flex   justify-evenly md:justify-evenly items-center  bg-base-100 ">
         <div className=" flex items-center">
           <div className="dropdown z-100 relative">
             <div
@@ -166,14 +166,14 @@ const Navbar = () => {
           </ul>
         </div>
 
-        <div className="flex gap-3 ">
+        <div className="flex ite">
           <div className="">
             {/* user profile */}
             {user && (
               <div
                 tabIndex={0}
                 role="button"
-                className=" w-12 h-12 rounded-full dropdown dropdown-hover mr-2"
+                className=" w-12 h-12 rounded-full dropdown dropdown-hover "
               >
                 {/* dropdown user */}
                 <div className=" rounded-full ">

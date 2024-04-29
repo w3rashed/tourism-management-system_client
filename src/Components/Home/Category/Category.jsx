@@ -13,7 +13,7 @@ const Category = () => {
   }, []);
   console.log(data);
   return (
-    <div className="px-5">
+    <div className="px-5 container mx-auto">
       <div className="text-center lg:w-[70%] mx-auto">
         <Zoom duration="1000" delay="20">
           <h2 className="text-5xl font-bold">Our Region</h2>

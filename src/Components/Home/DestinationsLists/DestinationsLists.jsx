@@ -14,7 +14,7 @@ const DestinationsLists = () => {
   }, []);
   console.log(destinations);
   return (
-    <div className="px-5 ">
+    <div className="px-5 container mx-auto">
       <div className="text-center my-8">
         <Zoom duration="1000">
           <h3 className="text-2xl font-Comforter_Brush text-[#f7931e]">

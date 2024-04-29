@@ -19,7 +19,7 @@ const AllTouristsSpot = () => {
 
   // console.log(allSpots);
   return (
-    <div className="px-5">
+    <div className="px-5 container mx-auto">
       <Helmet>
         <title>AllTouristsSpot-Discover Haven</title>
       </Helmet>

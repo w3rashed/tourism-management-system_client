@@ -4,7 +4,7 @@ import { Link } from "react-router-dom";
 
 const Discount = () => {
   return (
-    <div className="flex flex-col lg:flex-row gap-6 my-20 px-5 items-center">
+    <div className="flex flex-col lg:flex-row gap-6 my-20 px-5 items-center container mx-auto">
       <div className="basis-[70%]">
         <div className="relative">
           <div className="absolute flex w-full justify-end mt-10 pr-10">

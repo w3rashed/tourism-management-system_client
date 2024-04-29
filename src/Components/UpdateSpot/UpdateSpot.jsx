@@ -70,7 +70,7 @@ const UpdateSpot = () => {
       });
   };
   return (
-    <div className="px-5">
+    <div className="px-5 container mx-auto">
       <div className="text-center">
         <h1>Update Tourist Spot</h1>
       </div>

@@ -72,7 +72,7 @@ const Login = () => {
   };
 
   return (
-    <div className="flex flex-col-reverse lg:flex-row w-3/4 mx-auto my-8">
+    <div className="flex flex-col-reverse lg:flex-row w-3/4 mx-auto my-8 container">
       <Helmet>
         <title>Login-Discover Haven</title>
       </Helmet>

@@ -2,7 +2,7 @@ import { Zoom } from "react-awesome-reveal";
 
 const Gallery = () => {
   return (
-    <div className="mt-20 px-5">
+    <div className="mt-20 px-5 container mx-auto">
       <div className="text-center w-[70%] mx-auto">
         <Zoom duration="1000" delay="80">
           <h2 className="text-5xl font-bold">Our Recent Snaps</h2>

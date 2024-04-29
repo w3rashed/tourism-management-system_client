@@ -76,7 +76,7 @@ const AddTouristsSpot = () => {
   };
   console.log(user, "hiiiiiiiiiiiiiiiii");
   return (
-    <div className="px-5">
+    <div className="px-5 container mx-auto">
       <Helmet>
         <title>AddTouristsSpot-Discover Haven</title>
       </Helmet>

@@ -55,7 +55,7 @@ const MyList = () => {
   };
 
   return (
-    <div>
+    <div className="px-5 container mx-auto">
       <Helmet>
         <title>My_list-Discover Haven</title>
       </Helmet>
