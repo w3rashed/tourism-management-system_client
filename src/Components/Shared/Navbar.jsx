@@ -123,7 +123,7 @@ const Navbar = () => {
     </>
   );
   return (
-    <div className="my-6 overflow-hidden">
+    <div className="my-6 ">
       <div className="flex   justify-evenly md:justify-evenly items-center  bg-base-100 ">
         <div className=" flex items-center">
           <div className="dropdown z-100 relative">
@@ -165,8 +165,7 @@ const Navbar = () => {
             <Zoom className="flex">{links}</Zoom>
           </ul>
         </div>
-
-        <div className="flex ite">
+        <div className="flex ">
           <div className="">
             {/* user profile */}
             {user && (

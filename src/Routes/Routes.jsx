@@ -11,6 +11,7 @@ import UpdateSpot from "../Components/UpdateSpot/UpdateSpot";
 import PrivateRoutes from "./PrivetRoutes/PrivetRoutes";
 import Home from "../Components/Home/DestinationsLists/Home";
 import AddCategory from "../Components/AddCategory/AddCategory";
+import LogInModual from "../Components/User/LogInModual";
 
 const Routes = createBrowserRouter([
   {
@@ -33,6 +34,10 @@ const Routes = createBrowserRouter([
       {
         path: "/login",
         element: <Login></Login>,
+      },
+      {
+        path: "login_modal",
+        element: <LogInModual></LogInModual>,
       },
       {
         path: "/register",

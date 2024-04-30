@@ -17,7 +17,9 @@ const Home = () => {
       </div>
       <Discount></Discount>
       <Category></Category>
-      <Gallery></Gallery>
+      <div className="container mx-auto">
+        <Gallery></Gallery>
+      </div>
     </div>
   );
 };
