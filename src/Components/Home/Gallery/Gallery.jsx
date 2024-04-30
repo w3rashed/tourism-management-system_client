@@ -18,10 +18,10 @@ const Gallery = () => {
             </p>
           </Zoom>
         </div>
-        <div className="flex gap-4 flex-col lg:flex-row  ">
-          <div className="grid gap-4 lg:basis-[33%]">
+        <div className="flex gap-4 flex-col lg:flex-row xl:flex-row ">
+          <div className="grid gap-4 lg:basis-[33%] xl:flex-1">
             <img
-              className="w-full"
+              className="w-full "
               src="https://i.ibb.co/723VMsb/image.png"
               alt=""
             />
@@ -36,7 +36,7 @@ const Gallery = () => {
               alt=""
             />
           </div>
-          <div className="grid gap-4 row-span-5 ">
+          <div className="grid gap-4 row-span-5 xl:flex-1">
             <img
               className="row-span-2 w-full"
               src="https://i.ibb.co/yh4pHQ5/image.png"
@@ -48,9 +48,9 @@ const Gallery = () => {
               alt=""
             />
           </div>
-          <div className="">
+          <div className="xl:flex-1">
             <img
-              className="w-full h-[65%] "
+              className="w-full h-[65%] xl:h-[61%]"
               src="https://i.ibb.co/4WSB0MQ/image.png"
               alt=""
             />

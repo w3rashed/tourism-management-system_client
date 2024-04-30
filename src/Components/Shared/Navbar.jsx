@@ -162,7 +162,9 @@ const Navbar = () => {
         </div>
         <div className=" hidden lg:flex ">
           <ul className="menu menu-horizontal px-1">
-            <Zoom className="flex">{links}</Zoom>
+            <Zoom triggerOnce={true} className="flex">
+              {links}
+            </Zoom>
           </ul>
         </div>
         <div className="flex ">
