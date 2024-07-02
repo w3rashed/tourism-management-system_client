@@ -16,11 +16,35 @@
   - **My List**: Keep track of favorite or bookmarked tourist spots.
 - **Toggle Theme**: Switch between light and dark themes for personalized experience.
 
+## Technology Stack
+
+- **Frontend:**
+  - React.js for dynamic user interfaces.
+  - Daysi-UI & material-tailwind for design components.
+  - React Router for navigation.
+
+- **Backend:**
+  - Node.js with Express.js for server-side logic.
+  - MongoDB  for database management.
+  - Authentication and authorization (JWT).
+
 # NPM pacages .....
 - [react-simple-typewriter](https://www.npmjs.com/package/react-simple-typewriter)
 - [react-awesome-reveal](https://www.npmjs.com/package/react-awesome-reveal)
 - [React Hook from](https://react-hook-form.com/)
 - [Swiper slider](https://swiperjs.com/)
+
+## Deployment
+
+- Hosted on firebase
+- Continuous integration and deployment.
+
+## Getting Started
+
+- Clone the repository.
+- Install dependencies.
+- Configure environment variables.
+- Run the application.
 
 # Live link
 - server: https://discover-haven.web.app/
